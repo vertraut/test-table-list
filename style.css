@@ -63,7 +63,7 @@ button:focus {
 
   .thead th:not(:last-child) {
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 10px;
     border: 1px solid #d4d4d4;
   }
 
