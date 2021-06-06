@@ -50,47 +50,25 @@ button:focus {
   width: 100%;
 }
 
-@media screen and (max-width: 400px) {
-  .table thead {
-    display: none;
-  }
-
-  .table tr {
-    display: block;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgb(233, 233, 233);
-  }
-
-  .table td {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .table td:before {
-    content: attr(aria-label);
-    font-weight: bold;
-    margin-right: 50px;
-  }
-
-  .table td:last-child {
-    display: flex;
-    padding: 15px 0;
-    justify-content: center;
-
-    font-weight: 700;
-    color: rgb(197, 35, 35);
-    background-color: rgb(233, 233, 233);
-  }
-
-  .table td:last-child::before {
-    content: none;
-  }
+.thead th:hover:not(:last-child),
+.thead th:focus:not(:last-child) {
+  background-color: rgb(36, 96, 114);
+  color: #ffffff;
 }
 
 @media screen and (max-width: 800px) {
   .table thead {
-    display: none;
+    display: list-item;
+  }
+
+  .thead th:not(:last-child) {
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 1px solid #d4d4d4;
+  }
+
+  .table thead:before {
+    content: "Sort by:";
   }
 
   .table tr {
@@ -149,10 +127,6 @@ button:focus {
 
   .thead th:last-child {
     cursor: not-allowed;
-  }
-
-  .thead th:hover:not(:last-child) {
-    background-color: rgb(36, 96, 114);
   }
 
   .tbody tr:hover {
